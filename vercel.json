@@ -1,0 +1,17 @@
+{
+  "version": 2,
+  "buildCommand": "chmod +x vercel-setup.sh && ./vercel-setup.sh",
+  "outputDirectory": "dist/public",
+  "framework": null,
+  "installCommand": "npm install",
+  "builds": [
+    { "src": "vercel.js", "use": "@vercel/node" }
+  ],
+  "routes": [
+    { "src": "/api/(.*)", "dest": "/vercel.js" },
+    { "src": "/(.*)", "dest": "/vercel.js" }
+  ],
+  "env": {
+    "NODE_ENV": "production"
+  }
+}
